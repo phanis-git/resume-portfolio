@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   isDarkMode = false;
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
     // Check if user has a saved preference
@@ -23,6 +23,11 @@ export class HeaderComponent implements OnInit {
         this.applyTheme();
       }
     }
+
+    // Ensure theme is applied after view is fully initialized
+    setTimeout(() => {
+      this.applyTheme();
+    }, 0);
   }
 
   toggleTheme(): void {
@@ -33,6 +38,10 @@ export class HeaderComponent implements OnInit {
   }
 
   private applyTheme(): void {
-    document.body.classList.toggle('dark-theme', this.isDarkMode);
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.body, 'dark-theme');
+    } else {
+      this.renderer.removeClass(document.body, 'dark-theme');
+    }
   }
 }
