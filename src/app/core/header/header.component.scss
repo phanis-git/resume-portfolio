@@ -1,0 +1,99 @@
+.main-header {
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--header-text);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .portfolio-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  
+  a {
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+    
+    &.active {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+    }
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    i {
+      font-size: 16px;  // Reduced from 20px
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

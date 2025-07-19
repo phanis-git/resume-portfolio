@@ -1,0 +1,109 @@
+.footer {
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  color: #f8f9fa;
+  padding: 0px 0; /* Reduced from 30px to 15px */
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed; /* Fix the footer */
+  bottom: 0; /* Position at bottom */
+  width: 100%; /* Take full width */
+  left: 0; /* Ensure alignment */
+  z-index: 100; /* Keep above other content */
+  
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+  
+  .footer-info {
+    .copyright {
+      p {
+        margin-bottom: 3px; /* Reduced from 5px */
+        font-size: 13px; /* Reduced from 14px */
+        color: rgba(255, 255, 255, 0.8);
+        
+        &:first-child {
+          font-weight: 500;
+        }
+      }
+      
+      .heart {
+        color: #e74c3c;
+        display: inline-block;
+        animation: heartbeat 1.5s infinite;
+      }
+    }
+  }
+  
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; /* Reduced from 10px */
+    
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px; /* Reduced from 36px */
+        height: 32px; /* Reduced from 36px */
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 16px; /* Reduced from 18px */
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: white;
+          color: #3498db;
+          transform: translateY(-3px);
+        }
+      }
+    }
+    
+    .email {
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s ease;
+        
+        i {
+          font-size: 16px;
+        }
+        
+        &:hover {
+          color: #ffd700;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

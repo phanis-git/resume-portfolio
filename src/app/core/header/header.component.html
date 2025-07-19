@@ -1,0 +1,17 @@
+<header class="main-header">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/images/icons/portfolio.png" alt="Portfolio Icon" class="portfolio-icon">
+    </div>
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <i class="material-icons" [attr.title]="isDarkMode ? 'Light Mode' : 'Dark Mode'">
+          {{ isDarkMode ? 'light_mode' : 'dark_mode' }}
+        </i>
+      </button>
+    </div>
+  </nav>
+</header>

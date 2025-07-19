@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding-bottom: 70px; /* Add padding to account for the fixed footer height */
+}
