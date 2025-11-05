@@ -1,13 +1,11 @@
 .footer {
   background: linear-gradient(to right, #2c3e50, #3498db);
   color: #f8f9fa;
-  padding: 0px 0; /* Reduced from 30px to 15px */
+  padding: 8px 0; /* Added padding to remove empty space */
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed; /* Fix the footer */
-  bottom: 0; /* Position at bottom */
-  width: 100%; /* Take full width */
-  left: 0; /* Ensure alignment */
+  width: 100%; /* Keep full width */
+  margin-top: auto; /* Pushes the footer to the bottom */
   z-index: 100; /* Keep above other content */
   
   .footer-content {
@@ -15,11 +13,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 0; /* Remove any margin causing extra space */
     
     @media (max-width: 768px) {
       flex-direction: column;
       text-align: center;
-      gap: 20px;
+      gap: 15px; /* Adjusted from 20px to reduce vertical space */
     }
   }
   
