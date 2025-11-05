@@ -7,6 +7,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isDarkMode = false;
+  isMobileMenuOpen = false;
 
   constructor(private renderer: Renderer2) { }
 
@@ -35,6 +36,10 @@ export class HeaderComponent implements OnInit {
     this.applyTheme();
     // Save user preference
     localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
   private applyTheme(): void {
