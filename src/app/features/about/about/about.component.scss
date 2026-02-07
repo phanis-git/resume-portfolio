@@ -138,6 +138,12 @@ $transition: all 0.3s ease;
   }
 }
 
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .experience-item,
 .education-item {
   margin-bottom: 25px;
@@ -179,6 +185,11 @@ $transition: all 0.3s ease;
   }
 }
 
+.experience-item {
+  flex: 1 1 calc(50% - 20px); /* Take up 50% of the width minus the gap */
+  box-sizing: border-box;
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -211,7 +222,11 @@ $transition: all 0.3s ease;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr; /* Ensure single-column layout on smaller screens */
+  }
+  
   .profile-header {
     .name {
       font-size: 2rem;
@@ -226,6 +241,10 @@ $transition: all 0.3s ease;
     .section-title {
       font-size: 1.5rem;
     }
+  }
+
+  .experience-item {
+    flex: 1 1 100%; /* Stack items vertically */
   }
 }
 
@@ -246,4 +265,12 @@ $transition: all 0.3s ease;
   .skills-container {
     justify-content: center;
   }
+}
+
+.d-flex{
+ 
+}
+.prof-exp{
+  display: flex;
+  justify-content: space-between;
 }
